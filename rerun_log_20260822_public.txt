@@ -1,0 +1,188 @@
+﻿CGM FINAL REPRODUCIBILITY RERUN
+========================================================================
+Execution timestamp:
+2026-08-22 23:30:55 +08:00
+Project directory:
+[PROJECT_ROOT]
+Official data directory:
+[PROJECT_ROOT]\sarima_t_output
+v8 script:
+[PROJECT_ROOT]\TEX\FJU_CGM_report_audit_20260820\02_scripts\v8_horizon_figure.py
+========================================================================
+PYTHON AND PACKAGE VERSIONS
+Python version:
+Python 3.10.5
+Package versions:
+asttokens==3.0.1
+attrs==25.4.0
+beautifulsoup4==4.14.3
+bleach==6.3.0
+certifi==2026.4.22
+charset-normalizer==3.4.7
+colorama==0.4.6
+comm==0.2.3
+contourpy==1.3.2
+cycler==0.12.1
+Cython==3.2.8
+debugpy==1.8.20
+decorator==5.2.1
+defusedxml==0.7.1
+et_xmlfile==2.0.0
+exceptiongroup==1.3.1
+executing==2.2.1
+facenet-pytorch==2.6.0
+fastjsonschema==2.21.2
+filelock==3.29.0
+fonttools==4.61.1
+fsspec==2026.4.0
+graphviz==0.21
+greenlet==3.5.2
+idna==3.13
+ImageIO==2.37.3
+ipykernel==7.2.0
+ipython==8.38.0
+jedi==0.19.2
+Jinja2==3.1.6
+joblib==1.5.3
+jsonschema==4.26.0
+jsonschema-specifications==2025.9.1
+jupyter_client==8.8.0
+jupyter_core==5.9.1
+jupyterlab_pygments==0.3.0
+kiwisolver==1.4.9
+lazy-loader==0.5
+MarkupSafe==3.0.3
+matplotlib==3.10.8
+matplotlib-inline==0.2.1
+mistune==3.2.0
+mpmath==1.3.0
+narwhals==2.24.0
+nbclient==0.10.4
+nbconvert==7.17.0
+nbformat==5.10.4
+nest-asyncio==1.6.0
+networkx==3.4.2
+numpy==2.2.6
+opencv-python==4.13.0.92
+openpyxl==3.1.5
+packaging==26.0
+pandas==2.3.3
+pandocfilters==1.5.1
+parso==0.8.6
+patchify==0.2.3
+patsy==1.0.2
+pillow==12.2.0
+platformdirs==4.9.4
+playwright==1.60.0
+plotly==6.9.0
+pmdarima==2.1.1
+prompt_toolkit==3.0.52
+psutil==7.2.2
+pure_eval==0.2.3
+pyee==13.0.1
+Pygments==2.19.2
+pyparsing==3.3.2
+python-dateutil==2.9.0.post0
+pytz==2026.1.post1
+pyzmq==27.1.0
+referencing==0.37.0
+requests==2.33.1
+rpds-py==0.30.0
+scikit-image==0.25.2
+scikit-learn==1.7.2
+scipy==1.15.3
+seaborn==0.13.2
+six==1.17.0
+soupsieve==2.8.3
+stack-data==0.6.3
+statsmodels==0.14.6
+sympy==1.14.0
+threadpoolctl==3.6.0
+tifffile==2025.5.10
+tinycss2==1.4.0
+torch==2.12.0
+torchsummary==1.5.1
+torchvision==0.27.0
+torchviz==0.0.3
+tornado==6.5.4
+tqdm==4.67.3
+traitlets==5.14.3
+typing_extensions==4.15.0
+tzdata==2025.3
+urllib3==2.6.3
+wcwidth==0.6.0
+webencodings==0.5.1
+========================================================================
+Command: python verify_data_fingerprint.py "[PROJECT_ROOT]\sarima_t_output"
+Fingerprint start timestamp:
+2026-08-22 23:30:57 +08:00
+========================================================================
+DATA FINGERPRINT GATE
+========================================================================
+Official data directory: [PROJECT_ROOT]\sarima_t_output
+y_train path: [PROJECT_ROOT]\sarima_t_output\y_train.npy
+y_train shape: (1147,)
+y_train SHA-256: 29c93426280fc600ffa2be22dc3f127d917da6ee215343aa08895a699437f83d
+y_test path: [PROJECT_ROOT]\sarima_t_output\y_test.npy
+y_test shape: (192,)
+y_test SHA-256: 78f4c5ec76e5407d1c3ceb2301a54041aae0ce0cedb38f11ac169569519e465e
+center_value path: [PROJECT_ROOT]\sarima_t_output\center_value.npy
+center_value: 119.53914559721011
+Fingerprint gate: OK
+Fingerprint exit code: 0
+========================================================================
+V8 MULTI-HORIZON EVALUATION
+Command: python "[PROJECT_ROOT]\TEX\FJU_CGM_report_audit_20260820\02_scripts\v8_horizon_figure.py"
+v8 working directory: [PROJECT_ROOT]\sarima_t_output
+v8 start timestamp:
+2026-08-22 23:30:58 +08:00
+model        ARMA(2,2) no seasonal  Gaussian SARIMA  SARIMA MLE (exact)  Student-t SARIMA
+horizon_min                                                                              
+15                           3.252            3.279               3.316             3.274
+30                           7.767            7.738               7.807             7.711
+60                          14.091           13.569              13.659            13.541
+90                          17.998           16.908              16.945            16.926
+120                         19.962           18.380              18.405            18.432
+
+model        ARMA(2,2) no seasonal  Gaussian SARIMA  SARIMA MLE (exact)  Student-t SARIMA
+horizon_min                                                                              
+15                            5.86             5.94                5.98              5.96
+30                           14.14            14.09               14.17             14.10
+60                           25.45            24.56               24.72             24.56
+90                           32.03            30.20               30.34             30.24
+120                          35.35            32.72               32.86             32.83
+
+Paired CRPS difference vs Gaussian SARIMA (moving block bootstrap, L=12, 95% CI)
+                model  horizon_min   mean     lo     hi   sig
+     Student-t SARIMA           15 -0.005 -0.041 +0.038 False
+     Student-t SARIMA           30 -0.027 -0.112 +0.066 False
+     Student-t SARIMA           60 -0.028 -0.195 +0.127 False
+     Student-t SARIMA           90 +0.018 -0.194 +0.221 False
+     Student-t SARIMA          120 +0.052 -0.166 +0.261 False
+   SARIMA MLE (exact)           15 +0.037 -0.004 +0.076 False
+   SARIMA MLE (exact)           30 +0.069 -0.069 +0.204 False
+   SARIMA MLE (exact)           60 +0.089 -0.151 +0.372 False
+   SARIMA MLE (exact)           90 +0.037 -0.294 +0.386 False
+   SARIMA MLE (exact)          120 +0.024 -0.336 +0.361 False
+ARMA(2,2) no seasonal           15 -0.027 -0.111 +0.048 False
+ARMA(2,2) no seasonal           30 +0.029 -0.252 +0.264 False
+ARMA(2,2) no seasonal           60 +0.521 -0.291 +1.196 False
+ARMA(2,2) no seasonal           90 +1.090 -0.009 +2.148 False
+ARMA(2,2) no seasonal          120 +1.581 +0.492 +2.860  True
+
+Saved replacement_figure_v2_horizon.png, multi_horizon_full_metrics.csv, crps_difference_ci.csv
+
+PIT KS p on NON-OVERLAPPING subsamples (every h-th target), Gaussian SARIMA:
+  h= 15min  overlapping n=192 p=1.02e-01   |  non-overlapping n=192 p=0.102   |  mean PIT=0.481 (target 0.5)
+  h= 30min  overlapping n=191 p=3.45e-03   |  non-overlapping n= 96 p=0.025   |  mean PIT=0.462 (target 0.5)
+  h= 60min  overlapping n=189 p=4.74e-05   |  non-overlapping n= 48 p=0.039   |  mean PIT=0.431 (target 0.5)
+  h= 90min  overlapping n=187 p=4.42e-05   |  non-overlapping n= 32 p=0.449   |  mean PIT=0.458 (target 0.5)
+  h=120min  overlapping n=185 p=6.68e-05   |  non-overlapping n= 24 p=0.135   |  mean PIT=0.436 (target 0.5)
+v8 exit code: 0
+v8 end timestamp:
+2026-08-22 23:31:15 +08:00
+========================================================================
+S4 reproducibility rerun: COMPLETE
+Final timestamp:
+2026-08-22 23:31:15 +08:00
+
